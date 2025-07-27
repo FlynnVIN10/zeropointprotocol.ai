@@ -1,4 +1,4 @@
-# Zeropoint Protocol License Agreement
+# License Agreement
 
 **© 2025 Zeropoint Protocol, Inc., a Texas C Corporation with principal offices in Austin, TX. All Rights Reserved. Domain: zeropointprotocol.ai, Contact: legal@zeropointprotocol.ai**
 

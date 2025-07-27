@@ -4,14 +4,14 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 // With JSDoc @type annotations, IDEs can provide config autocompletion
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 (module.exports = {
-  title: 'Zeropoint Protocol AI',
+  title: 'Zeropoint Protocol',
   tagline: 'Advanced AI system with ethical governance and distributed ML',
   url: 'https://zeropointprotocol.ai',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'FlynnVIN10', // Usually your GitHub org/user name.
+  organizationName: 'Zeropoint Protocol, Inc.', // Company name
   projectName: 'zeropointprotocol.ai', // Usually your repo name.
 
   presets: [
@@ -41,7 +41,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Zeropoint Protocol AI',
+        title: 'Zeropoint Protocol',
         logo: {
           alt: 'Zeropoint Protocol Logo',
           src: 'img/logo.svg',
@@ -78,15 +78,32 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             ],
           },
           {
-            title: 'Community',
+            title: 'Legal',
             items: [
               {
-                label: 'GitHub Discussions',
-                href: 'https://github.com/FlynnVIN10/zeropointprotocol.ai/discussions',
+                label: 'License',
+                to: '/docs/license',
               },
               {
-                label: 'Issues',
-                href: 'https://github.com/FlynnVIN10/zeropointprotocol.ai/issues',
+                label: 'Privacy Policy',
+                to: '/docs/privacy',
+              },
+              {
+                label: 'Terms of Service',
+                to: '/docs/terms',
+              },
+            ],
+          },
+          {
+            title: 'Contact',
+            items: [
+              {
+                label: 'Legal Inquiries',
+                href: 'mailto:legal@zeropointprotocol.ai',
+              },
+              {
+                label: 'Website',
+                href: 'https://zeropointprotocol.ai',
               },
             ],
           },
@@ -104,7 +121,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Zeropoint Protocol AI. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Zeropoint Protocol, Inc., a Texas C Corporation with principal offices in Austin, TX. All Rights Reserved.`,
       },
       prism: {
         theme: lightCodeTheme,

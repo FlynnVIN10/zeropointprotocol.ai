@@ -2,12 +2,16 @@
   "name": "zeropointprotocol",
   "version": "0.0.0",
   "private": true,
+  "description": "Advanced AI system with ethical governance and distributed ML",
+  "author": "Zeropoint Protocol, Inc.",
+  "license": "PROPRIETARY",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
+    "deploy:cloudflare": "npm run build && wrangler pages publish build",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
@@ -24,6 +28,9 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "url-loader": "^4.1.1"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
   },
   "browserslist": {
     "production": [

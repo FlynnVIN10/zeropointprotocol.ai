@@ -1,6 +1,5 @@
 # Zeropoint Protocol AI
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![Node.js](https://img.shields.io/badge/Node.js-20+-green.svg)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
@@ -85,15 +84,76 @@ Zeropoint Protocol AI is an advanced AI system that combines distributed machine
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+**⚠️ CONTRIBUTION POLICY: View-only; no PRs/forks/clones without signed agreement. Contact legal@zeropointprotocol.ai for licensing inquiries.**
+
+This project follows ethical AI principles with Zeroth-gate compliance. All contributions must align with responsible AI development practices.
+
+### **Contribution Requirements**
+
+* All contributions must pass ethical validation through the Zeroth-gate system
+* Code must align with the Zeroth Principle: "Only with good intent and a good heart does the system function"
+* Contributions must not enable harmful or malicious applications
+* All code must respect human rights and dignity
+
+### **Getting Started**
+
+1. Contact legal@zeropointprotocol.ai for licensing inquiries
+2. Complete a signed license agreement
+3. Follow the ethical guidelines and coding standards
+4. Submit your contribution with appropriate documentation
+
+For more information, see our Contributing Guidelines.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### **View-Only License - © 2025 Zeropoint Protocol, Inc., a Texas C Corporation with principal offices in Austin, TX. All Rights Reserved.**
+
+This software is provided for **VIEW-ONLY** purposes under a proprietary license. All rights are reserved by Zeropoint Protocol, Inc.
+
+### **License Terms**
+
+#### **PROHIBITED ACTIVITIES:**
+
+* **Cloning** this repository
+* **Downloading** the source code
+* **Forking** this repository
+* **Modifying** any code or documentation
+* **Running** the software
+* **Distributing** the software or any derivatives
+* **Contributing** code or documentation
+* **Creating derivative works**
+* **Commercial use** of any kind
+
+#### **PERMITTED ACTIVITIES:**
+
+* **Viewing** the code and documentation on GitHub
+* **Reading** the documentation for informational purposes
+* **Contacting** us for licensing inquiries
+
+### **License Requirements**
+
+To obtain rights beyond view-only access, you must:
+
+1. Contact legal@zeropointprotocol.ai
+2. Complete a signed license agreement
+3. Receive written approval from Zeropoint Protocol, Inc.
+4. Comply with all terms and conditions of the signed agreement
+
+### **Contact Information**
+
+* **Legal Questions**: legal@zeropointprotocol.ai
+* **License Inquiries**: legal@zeropointprotocol.ai
+* **Website**: https://zeropointprotocol.ai/legal
+
+### **License Summary**
+
+```
+© 2025 Zeropoint Protocol, Inc., a Texas C Corporation with principal offices in Austin, TX. All Rights Reserved.
+View-Only License: No clone, modify, run or distribute without signed license.
+See LICENSE.md for details.
+```
+
+For the complete license text, see LICENSE.md.
 
 ---
 
