@@ -104,11 +104,15 @@ This project follows ethical AI principles with Zeroth-gate compliance. All cont
 
 For more information, see our Contributing Guidelines.
 
-## 📄 License
+## 📑 License & Access
 
-### **View-Only License - © 2025 Zeropoint Protocol, Inc., a Texas C Corporation with principal offices in Austin, TX. All Rights Reserved.**
+**© 2025 Zeropoint Protocol, Inc., a Texas C Corporation with principal offices in Austin, TX. All Rights Reserved. Domain: zeropointprotocol.ai, Contact: legal@zeropointprotocol.ai**
+
+### **View-Only License: Browse on GitHub Only**
 
 This software is provided for **VIEW-ONLY** purposes under a proprietary license. All rights are reserved by Zeropoint Protocol, Inc.
+
+**All other uses require signed license agreement.**
 
 ### **License Terms**
 
