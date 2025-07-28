@@ -1,0 +1,420 @@
+.hero {
+  padding: 4rem 0;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.hero h1 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.hero .text--lg {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.25rem;
+}
+
+.main {
+  background: var(--ifm-color-emphasis-50);
+}
+
+.section {
+  padding: 4rem 0;
+  background: white;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.section:nth-child(even) {
+  background: var(--ifm-color-emphasis-50);
+}
+
+.section h2 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Company Information */
+.companyInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.infoItem {
+  padding: 1.5rem;
+  background: var(--ifm-color-emphasis-50);
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.infoItem h4 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.infoItem p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-600);
+  font-weight: 500;
+}
+
+/* Legal Cards */
+.legalCard {
+  background: var(--ifm-color-emphasis-100);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.legalCard h3 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.legalCard p {
+  margin-bottom: 1.5rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.licenseFeatures {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.licenseFeature {
+  padding: 1rem;
+  background: white;
+  border-radius: 6px;
+  border-left: 3px solid var(--ifm-color-warning);
+}
+
+.licenseFeature h4 {
+  color: var(--ifm-color-warning);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.licenseFeature p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.9rem;
+}
+
+/* Documents Card */
+.documentsCard {
+  background: var(--ifm-color-emphasis-100);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.documentsCard h3 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.documentList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.documentItem {
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: transform 0.2s ease-in-out;
+}
+
+.documentItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.documentItem h4 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.documentItem p {
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.95rem;
+}
+
+/* Compliance Card */
+.complianceCard {
+  background: var(--ifm-color-emphasis-100);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.complianceCard h3 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.complianceCard p {
+  margin-bottom: 1.5rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.complianceFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.complianceFeature {
+  padding: 1rem;
+  background: white;
+  border-radius: 6px;
+  border-left: 3px solid var(--ifm-color-success);
+}
+
+.complianceFeature h4 {
+  color: var(--ifm-color-success);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.complianceFeature p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.9rem;
+}
+
+/* Regulatory List */
+.regulatoryList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.regulatoryItem {
+  padding: 1.5rem;
+  background: var(--ifm-color-emphasis-50);
+  border-radius: 8px;
+  border-left: 4px solid var(--ifm-color-info);
+}
+
+.regulatoryItem h4 {
+  color: var(--ifm-color-info);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.regulatoryItem ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.regulatoryItem li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.25rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.regulatoryItem li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--ifm-color-success);
+  font-weight: bold;
+}
+
+/* Contact Grid */
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.contactCard {
+  padding: 2rem;
+  background: var(--ifm-color-emphasis-50);
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.contactCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contactCard h3 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.contactCard p:first-of-type {
+  font-weight: bold;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.contactCard p:last-of-type {
+  margin: 0;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.95rem;
+}
+
+/* Disclaimer Card */
+.disclaimerCard {
+  background: var(--ifm-color-emphasis-100);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.disclaimerCard h3 {
+  color: var(--ifm-color-warning);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.disclaimerList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.disclaimerItem {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid var(--ifm-color-warning);
+}
+
+.disclaimerItem h4 {
+  color: var(--ifm-color-warning);
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.disclaimerItem p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-600);
+  line-height: 1.5;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+}
+
+.ctaSection h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.ctaSection .text--lg {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.buttons .button--outline {
+  border-color: white;
+  color: white;
+}
+
+.buttons .button--outline:hover {
+  background: white;
+  color: var(--ifm-color-primary);
+}
+
+@media screen and (max-width: 996px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .section {
+    padding: 3rem 0;
+  }
+  
+  .legalCard,
+  .documentsCard,
+  .complianceCard {
+    margin-top: 2rem;
+  }
+  
+  .licenseFeatures {
+    grid-template-columns: 1fr;
+  }
+  
+  .contactGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .section h2 {
+    font-size: 1.75rem;
+  }
+  
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .buttons .button {
+    margin: 0.5rem 0;
+  }
+  
+  .companyInfo {
+    grid-template-columns: 1fr;
+  }
+  
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+} 

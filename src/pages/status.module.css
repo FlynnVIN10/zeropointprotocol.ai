@@ -1,0 +1,323 @@
+/* Hero Banner */
+.heroBanner {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+/* Main Content */
+.mainContent {
+  padding: 2rem 0;
+}
+
+/* Status Sections */
+.statusSection {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: var(--ifm-color-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Status Icons */
+.successIcon {
+  color: #10b981;
+  font-size: 1.5rem;
+}
+
+.inProgressIcon {
+  color: #f59e0b;
+  font-size: 1.5rem;
+}
+
+.infoIcon {
+  color: #3b82f6;
+  font-size: 1.5rem;
+}
+
+.metricsIcon {
+  color: #8b5cf6;
+  font-size: 1.5rem;
+}
+
+.cleanIcon {
+  color: #ef4444;
+  font-size: 1.5rem;
+}
+
+.pendingIcon {
+  color: #6b7280;
+  font-size: 1.5rem;
+}
+
+/* Status Cards */
+.statusCard {
+  background: white;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.statusCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.statusCard h3 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.statusCard ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.statusCard li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* Phase Cards */
+.phaseCard {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.phaseCard h3 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.phaseContent h4 {
+  color: var(--ifm-color-primary-dark);
+  margin: 1.5rem 0 0.75rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.phaseContent ul {
+  margin: 0.5rem 0 1rem 1.5rem;
+}
+
+.phaseContent li {
+  margin-bottom: 0.25rem;
+  line-height: 1.5;
+}
+
+/* Code Blocks */
+.codeBlock {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  margin: 0.75rem 0 1.5rem 0;
+  border: 1px solid #334155;
+}
+
+/* Status Grid */
+.statusGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statusItem {
+  background: white;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.statusItem h4 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.statusItem ul, .statusItem ol {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.statusItem li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Metrics Grid */
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.metricCard {
+  background: white;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.metricCard:hover {
+  transform: translateY(-2px);
+}
+
+.metricCard span {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.metricCard h4 {
+  color: var(--ifm-color-primary);
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.metricCard p {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* CTA Section */
+.ctaSection {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+  border-radius: 12px;
+  margin-top: 3rem;
+}
+
+.ctaContent h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.ctaContent p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+  
+  .statusGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .metricsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .ctaContent h2 {
+    font-size: 2rem;
+  }
+  
+  .ctaContent p {
+    font-size: 1rem;
+  }
+  
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ctaButtons .button {
+    margin: 0.5rem 0;
+  }
+  
+  .codeBlock {
+    font-size: 0.75rem;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroBanner {
+    padding: 2rem 0;
+  }
+  
+  .mainContent {
+    padding: 1rem 0;
+  }
+  
+  .statusCard, .phaseCard, .statusItem, .metricCard {
+    padding: 1rem;
+  }
+  
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+} 

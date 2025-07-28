@@ -3,8 +3,8 @@
 **Project:** Zeropoint Protocol Development  
 **Status:** 🟢 **ACTIVE DEVELOPMENT**  
 **Lead Developer:** Cursor Dev Team  
-**Last Updated:** December 19, 2024 - 15:30 UTC  
-**Repository:** https://github.com/FlynnVIN10/Zeropoint-Protocol
+**Last Updated:** January 2025 - 15:30 UTC  
+**Repository:** https://github.com/FlynnVIN10/zeropointprotocol.ai
 
 ---
 

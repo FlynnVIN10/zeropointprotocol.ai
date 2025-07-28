@@ -1,0 +1,249 @@
+.hero {
+  padding: 4rem 0;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.hero h1 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.hero .text--lg {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.25rem;
+}
+
+.main {
+  background: var(--ifm-color-emphasis-50);
+}
+
+.section {
+  padding: 4rem 0;
+  background: white;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.section:nth-child(even) {
+  background: var(--ifm-color-emphasis-50);
+}
+
+.section h2 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.techCard {
+  background: var(--ifm-color-emphasis-100);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.techCard h3 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.techCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.techCard li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  position: relative;
+  padding-left: 1.5rem;
+  line-height: 1.5;
+}
+
+.techCard li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--ifm-color-success);
+  font-weight: bold;
+}
+
+.techCard li:last-child {
+  border-bottom: none;
+}
+
+.featureList {
+  margin-top: 2rem;
+}
+
+.featureItem {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--ifm-color-emphasis-50);
+  border-radius: 8px;
+  border-left: 4px solid var(--ifm-color-primary);
+}
+
+.featureItem h4 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.featureItem p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.95rem;
+}
+
+.ethicalFeatures {
+  margin-top: 2rem;
+}
+
+.ethicalItem {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--ifm-color-emphasis-50);
+  border-radius: 8px;
+  border-left: 4px solid var(--ifm-color-success);
+}
+
+.ethicalItem h4 {
+  color: var(--ifm-color-success);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.ethicalItem p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.95rem;
+}
+
+.performanceFeatures {
+  margin-top: 2rem;
+}
+
+.performanceItem {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--ifm-color-emphasis-50);
+  border-radius: 8px;
+  border-left: 4px solid var(--ifm-color-warning);
+}
+
+.performanceItem h4 {
+  color: var(--ifm-color-warning);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.performanceItem p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.95rem;
+}
+
+.decentralizedFeatures {
+  margin-top: 2rem;
+}
+
+.decentralizedItem {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--ifm-color-emphasis-50);
+  border-radius: 8px;
+  border-left: 4px solid var(--ifm-color-info);
+}
+
+.decentralizedItem h4 {
+  color: var(--ifm-color-info);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.decentralizedItem p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.95rem;
+}
+
+.ctaSection {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+}
+
+.ctaSection h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.ctaSection .text--lg {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.buttons .button--outline {
+  border-color: white;
+  color: white;
+}
+
+.buttons .button--outline:hover {
+  background: white;
+  color: var(--ifm-color-primary);
+}
+
+@media screen and (max-width: 996px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .section {
+    padding: 3rem 0;
+  }
+  
+  .techCard {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .section h2 {
+    font-size: 1.75rem;
+  }
+  
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .buttons .button {
+    margin: 0.5rem 0;
+  }
+} 

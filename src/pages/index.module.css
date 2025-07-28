@@ -1,0 +1,129 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Mission Section */
+.missionSection {
+  padding: 4rem 0;
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.missionCard {
+  padding: 1.5rem;
+  text-align: center;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+  transition: transform 0.2s ease-in-out;
+}
+
+.missionCard:hover {
+  transform: translateY(-2px);
+}
+
+.missionCard h3 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+}
+
+/* Features Section */
+.featuresSection {
+  padding: 4rem 0;
+  background: white;
+}
+
+.featureCard {
+  padding: 2rem;
+  background: var(--ifm-color-emphasis-50);
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.featureCard:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.featureCard h3 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.featureCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.featureCard li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.featureCard li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--ifm-color-success);
+  font-weight: bold;
+}
+
+.featureCard li:last-child {
+  border-bottom: none;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.ctaSection h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.ctaSection .text--lg {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+}
+
+.ctaSection .button--outline {
+  border-color: white;
+  color: white;
+}
+
+.ctaSection .button--outline:hover {
+  background: white;
+  color: var(--ifm-color-primary);
+}

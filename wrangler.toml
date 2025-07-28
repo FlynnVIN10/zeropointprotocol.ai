@@ -1,0 +1,16 @@
+name = "zeropointprotocol-ai"
+compatibility_date = "2025-01-01"
+
+[site]
+bucket = "./build"
+entry-point = "workers-site"
+
+[env.production]
+name = "zeropointprotocol-ai"
+route = "zeropointprotocol.ai/*"
+zone_id = "" # Add your Cloudflare zone ID here
+
+[env.staging]
+name = "zeropointprotocol-ai-staging"
+route = "staging.zeropointprotocol.ai/*"
+zone_id = "" # Add your Cloudflare zone ID here 

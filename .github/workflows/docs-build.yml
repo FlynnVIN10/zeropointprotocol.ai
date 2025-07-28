@@ -1,0 +1,153 @@
+name: Build and Deploy Documentation
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'docs/**'
+      - 'static/**'
+      - 'docusaurus.config.js'
+      - 'sidebars.js'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'scripts/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'docs/**'
+      - 'static/**'
+      - 'docusaurus.config.js'
+      - 'sidebars.js'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'scripts/**'
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Sync deployment status
+      run: node scripts/sync-status.js
+
+    - name: Build documentation
+      run: npm run build
+
+    - name: Test build output
+      run: |
+        # Check if build directory exists and has content
+        if [ ! -d "build" ]; then
+          echo "❌ Build directory not found"
+          exit 1
+        fi
+        
+        # Check for critical files
+        if [ ! -f "build/index.html" ]; then
+          echo "❌ index.html not found in build output"
+          exit 1
+        fi
+        
+        echo "✅ Build output validation passed"
+
+    - name: Lint documentation
+      run: |
+        # Check for broken internal links
+        npm run broken-links || true
+        
+        # Check for markdown linting issues
+        npx markdownlint docs/ src/ --ignore node_modules/ || true
+
+    - name: Test external links
+      run: |
+        # Install link checker
+        npm install -g markdown-link-check
+        
+        # Check external links in markdown files
+        find docs/ src/ -name "*.md" -exec markdown-link-check {} \; || true
+
+    - name: Validate SEO metadata
+      run: |
+        # Check if all pages have proper meta tags
+        grep -r "title:" src/pages/ || echo "No title meta tags found in pages"
+        grep -r "description:" src/pages/ || echo "No description meta tags found in pages"
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: docusaurus-build
+        path: build/
+        retention-days: 7
+
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Sync deployment status
+      run: node scripts/sync-status.js
+
+    - name: Build documentation
+      run: npm run build
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build
+        cname: zeropointprotocol.ai
+
+    - name: Verify deployment
+      run: |
+        # Wait for deployment to complete
+        sleep 30
+        
+        # Check if site is accessible
+        curl -f https://zeropointprotocol.ai || echo "⚠️ Site not yet accessible"
+
+  notify:
+    needs: [build-and-test, deploy]
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+    - name: Notify on success
+      if: success()
+      run: |
+        echo "✅ Documentation build and deployment completed successfully"
+        echo "🌐 Site available at: https://zeropointprotocol.ai"
+        
+    - name: Notify on failure
+      if: failure()
+      run: |
+        echo "❌ Documentation build or deployment failed"
+        echo "Check the workflow logs for details" 

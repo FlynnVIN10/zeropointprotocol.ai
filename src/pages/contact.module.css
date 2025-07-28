@@ -1,0 +1,348 @@
+.hero {
+  padding: 4rem 0;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.hero h1 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.hero .text--lg {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.25rem;
+}
+
+.main {
+  background: var(--ifm-color-emphasis-50);
+}
+
+.section {
+  padding: 4rem 0;
+  background: white;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.section:nth-child(even) {
+  background: var(--ifm-color-emphasis-50);
+}
+
+.section h2 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Contact Cards */
+.contactCard {
+  background: var(--ifm-color-emphasis-100);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.contactCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contactIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contactCard h3 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.email {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--ifm-color-primary);
+  text-align: center;
+  margin-bottom: 1rem;
+  word-break: break-all;
+}
+
+.contactCard p {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.contactFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contactFeature {
+  padding: 0.75rem;
+  background: white;
+  border-radius: 6px;
+  border-left: 3px solid var(--ifm-color-primary);
+}
+
+.contactFeature h4 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.contactFeature p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+/* Response Times */
+.responseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.responseCard {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.responseCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.responseCard h4 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.responseCard p {
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.95rem;
+}
+
+.responseTime {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--ifm-color-primary);
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Company Information */
+.companyInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.infoItem {
+  padding: 1rem;
+  background: var(--ifm-color-emphasis-50);
+  border-radius: 8px;
+  border-left: 4px solid var(--ifm-color-primary);
+}
+
+.infoItem h4 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.infoItem p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-600);
+  font-weight: 500;
+}
+
+/* Additional Resources */
+.additionalInfo {
+  background: var(--ifm-color-emphasis-100);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.additionalInfo h3 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.resourceList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.resourceItem {
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: transform 0.2s ease-in-out;
+}
+
+.resourceItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.resourceItem h4 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.resourceItem p {
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.95rem;
+}
+
+/* FAQ Section */
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.faqItem {
+  padding: 1.5rem;
+  background: var(--ifm-color-emphasis-50);
+  border-radius: 8px;
+  border-left: 4px solid var(--ifm-color-info);
+}
+
+.faqItem h4 {
+  color: var(--ifm-color-info);
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.faqItem p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-600);
+  line-height: 1.5;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+}
+
+.ctaSection h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.ctaSection .text--lg {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.buttons .button--outline {
+  border-color: white;
+  color: white;
+}
+
+.buttons .button--outline:hover {
+  background: white;
+  color: var(--ifm-color-primary);
+}
+
+@media screen and (max-width: 996px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .section {
+    padding: 3rem 0;
+  }
+  
+  .contactCard {
+    margin-bottom: 2rem;
+  }
+  
+  .responseGrid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .additionalInfo {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .section h2 {
+    font-size: 1.75rem;
+  }
+  
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .buttons .button {
+    margin: 0.5rem 0;
+  }
+  
+  .responseGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contactCard {
+    margin-bottom: 1.5rem;
+  }
+  
+  .email {
+    font-size: 1rem;
+  }
+} 
