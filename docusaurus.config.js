@@ -51,12 +51,12 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Technology',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/contact', label: 'Contact', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            to: '/contact',
+            label: 'Support',
             position: 'right',
           },
         ],
@@ -65,46 +65,46 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Technology',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Technology',
+                to: '/technology',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Legal',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'License',
+                to: '/legal',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Terms',
+                to: '/legal',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Privacy',
+                to: '/legal',
               },
             ],
           },
           {
-            title: 'More',
+            title: 'Contact',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'Contact',
+                to: '/contact',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'Support',
+                to: '/contact',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © 2025 Zeropoint Protocol, Inc., a Texas C Corporation with principal offices in Austin, TX. Legal Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus. Licensing.`,
       },
       prism: {
         theme: lightCodeTheme,
