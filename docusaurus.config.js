@@ -49,6 +49,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         items: [
           {to: '/', label: 'Home', position: 'left'},
           {to: '/technology', label: 'Technology', position: 'left'},
+          {to: '/Interact', label: 'Interact', position: 'left'},
+          {to: '/Dashboard', label: 'Dashboard', position: 'left'},
           {
             type: 'doc',
             docId: 'intro',
@@ -62,8 +64,16 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         style: 'dark',
         links: [
           {
-            title: 'Technology',
+            title: 'Platform',
             items: [
+              {
+                label: 'Interact',
+                to: '/Interact',
+              },
+              {
+                label: 'Dashboard',
+                to: '/Dashboard',
+              },
               {
                 label: 'Technology',
                 to: '/technology',
@@ -75,15 +85,18 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             items: [
               {
                 label: 'License',
-                to: '/legal',
+                to: '#',
+                title: 'Coming Soon',
               },
               {
                 label: 'Terms',
-                to: '/legal',
+                to: '#',
+                title: 'Coming Soon',
               },
               {
                 label: 'Privacy',
-                to: '/legal',
+                to: '#',
+                title: 'Coming Soon',
               },
             ],
           },
