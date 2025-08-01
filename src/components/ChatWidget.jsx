@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChatBubble } from './ChatBubble';
 import { TypingIndicator } from './TypingIndicator';
+import { API_ENDPOINTS } from '../config/api';
 
 export function ChatWidget() {
   const [messages, setMessages] = useState([]);
@@ -38,7 +39,7 @@ export function ChatWidget() {
   useEffect(() => {
     const connectSSE = () => {
       try {
-        eventSourceRef.current = new EventSource('/v1/chat/stream');
+        eventSourceRef.current = new EventSource(API_ENDPOINTS.CHAT_STREAM);
         
         eventSourceRef.current.onopen = () => {
           setIsConnected(true);
@@ -101,7 +102,7 @@ export function ChatWidget() {
 
     try {
       // Send message to backend
-      const response = await fetch('/v1/chat/send', {
+      const response = await fetch(API_ENDPOINTS.CHAT_SEND, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

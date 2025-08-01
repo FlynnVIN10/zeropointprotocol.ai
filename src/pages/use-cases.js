@@ -2,8 +2,6 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import styles from './use-cases.module.css';
-import Link from '@docusaurus/Link';
-import styles from './use-cases.module.css';
 
 export default function UseCases() {
   return (

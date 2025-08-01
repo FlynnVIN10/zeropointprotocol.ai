@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-<<<<<<< HEAD
 import Link from '@docusaurus/Link';
 import styles from './legal.module.css';
 
@@ -315,16 +314,3 @@ export default function Legal() {
     </Layout>
   );
 } 
-=======
-
-export default function Legal() {
-  return (
-    <Layout title="Legal">
-      <div style={{ padding: '2rem', textAlign: 'center' }}>
-        <h1>Legal</h1>
-        <p>Coming Soon</p>
-      </div>
-    </Layout>
-  );
-}
->>>>>>> 71c525b4c2247256a3563b1760f4d079f362ecdc

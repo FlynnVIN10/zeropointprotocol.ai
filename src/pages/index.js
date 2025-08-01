@@ -4,28 +4,18 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
-<<<<<<< HEAD
-=======
-import HomepageFeatures from '../components/HomepageFeatures';
->>>>>>> 71c525b4c2247256a3563b1760f4d079f362ecdc
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-<<<<<<< HEAD
         <h1 className="hero__title">Zeropoint Protocol</h1>
         <p className="hero__subtitle">Advanced AI Infrastructure with Ethical Alignment</p>
-=======
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
->>>>>>> 71c525b4c2247256a3563b1760f4d079f362ecdc
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/technology">
-<<<<<<< HEAD
             Explore Technology →
           </Link>
           <Link
@@ -33,9 +23,6 @@ function HomepageHeader() {
             to="/use-cases"
             style={{marginLeft: '1rem'}}>
             View Use Cases →
-=======
-            Get Started
->>>>>>> 71c525b4c2247256a3563b1760f4d079f362ecdc
           </Link>
         </div>
       </div>
@@ -43,7 +30,6 @@ function HomepageHeader() {
   );
 }
 
-<<<<<<< HEAD
 function MissionSection() {
   return (
     <section className={styles.missionSection}>
@@ -183,13 +169,10 @@ function CTASection() {
   );
 }
 
-=======
->>>>>>> 71c525b4c2247256a3563b1760f4d079f362ecdc
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-<<<<<<< HEAD
       title="Zeropoint Protocol - Advanced AI Infrastructure with Ethical Alignment"
       description="Enterprise-grade AI services with uncompromising ethical standards. Advanced language models, code generation, and image synthesis with Zeroth-gate validation.">
       <HomepageHeader />
@@ -197,13 +180,6 @@ export default function Home() {
         <MissionSection />
         <FeaturesSection />
         <CTASection />
-=======
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
->>>>>>> 71c525b4c2247256a3563b1760f4d079f362ecdc
       </main>
     </Layout>
   );
