@@ -321,7 +321,4 @@
   .metricsGrid {
     grid-template-columns: 1fr;
   }
-} 
-=======
-.mainContent { background: #1A1A1A; min-height: 100vh; }
->>>>>>> 71c525b4c2247256a3563b1760f4d079f362ecdc
+}
