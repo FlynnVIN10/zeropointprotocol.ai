@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Zeropoint Protocol AI
 
 [![Python](https://img.shields.io/badge/Python-3.12+-blue.svg)](https://www.python.org/downloads/)
@@ -162,3 +163,38 @@ For the complete license text, see LICENSE.md.
 ---
 
 **Remember**: Only with good intent and a good heart does the system function. 🌟
+=======
+# Website
+
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+
+### Installation
+
+```
+$ yarn
+```
+
+### Local Development
+
+```
+$ yarn start
+```
+
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+### Build
+
+```
+$ yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+```
+$ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+>>>>>>> 71c525b4c2247256a3563b1760f4d079f362ecdc

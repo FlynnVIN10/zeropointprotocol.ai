@@ -1,0 +1,369 @@
+/* Dashboard with Balenciaga aesthetic and radial visualization */
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
+  color: #ffffff;
+  padding: 2rem 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 2rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #ffffff, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #888888;
+  font-weight: 300;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 2rem;
+}
+
+.loadingSpinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(0, 255, 255, 0.3);
+  border-top: 3px solid #00ffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.mainSection {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.visualizationSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radialContainer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.radialChart {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.centerCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, #00ffff, #0080ff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.centerText {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #000000;
+  text-align: center;
+  line-height: 1;
+}
+
+.radialRing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.radialSegment {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00ffff);
+  transform-origin: 0 50%;
+  transform: translateY(-50%) rotate(var(--rotation));
+}
+
+.radialSegment span {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #00ffff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.statusGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.card.success {
+  border-color: rgba(0, 255, 0, 0.3);
+}
+
+.card.info {
+  border-color: rgba(0, 255, 255, 0.3);
+}
+
+.card.warning {
+  border-color: rgba(255, 165, 0, 0.3);
+}
+
+.cardTitle {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #00ffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cardContent {
+  font-family: 'Courier New', monospace;
+}
+
+.jsonData {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.noData {
+  color: #888888;
+  font-style: italic;
+  margin: 0;
+}
+
+.chatSection {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.chatContainer {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  height: 500px;
+  transition: all 0.3s ease;
+}
+
+.chatContainer:hover {
+  border-color: rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.metricsSection {
+  margin-top: 3rem;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.metricCard {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.metricCard:hover {
+  border-color: rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.metricValue {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #00ffff;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.metricLabel {
+  font-size: 0.9rem;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.error {
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  color: #ff6666;
+}
+
+.error h3 {
+  margin: 0 0 1rem 0;
+  color: #ff4444;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .mainSection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .radialContainer {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .container {
+    padding: 1rem 0;
+  }
+  
+  .content {
+    padding: 0 1rem;
+  }
+  
+  .metricsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .radialContainer {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .centerCircle {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .centerText {
+    font-size: 0.6rem;
+  }
+}
+
+/* Animation for radial segments */
+@keyframes radialPulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.radialSegment {
+  animation: radialPulse 3s ease-in-out infinite;
+}
+
+.radialSegment:nth-child(2) {
+  animation-delay: 0.75s;
+}
+
+.radialSegment:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+.radialSegment:nth-child(4) {
+  animation-delay: 2.25s;
+} 

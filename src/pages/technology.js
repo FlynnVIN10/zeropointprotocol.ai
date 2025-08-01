@@ -2,6 +2,8 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import styles from './technology.module.css';
+import Link from '@docusaurus/Link';
+import styles from './technology.module.css';
 
 export default function Technology() {
   return (

@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+<<<<<<< HEAD
 import Link from '@docusaurus/Link';
 import styles from './contact.module.css';
 
@@ -328,3 +329,16 @@ export default function Contact() {
     </Layout>
   );
 } 
+=======
+
+export default function Contact() {
+  return (
+    <Layout title="Contact">
+      <div style={{ padding: '2rem', textAlign: 'center' }}>
+        <h1>Contact</h1>
+        <p>Coming Soon</p>
+      </div>
+    </Layout>
+  );
+}
+>>>>>>> 71c525b4c2247256a3563b1760f4d079f362ecdc

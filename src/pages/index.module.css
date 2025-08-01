@@ -8,10 +8,16 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 @media screen and (max-width: 996px) {
+=======
+}
+
+@media screen and (max-width: 966px) {
+>>>>>>> 71c525b4c2247256a3563b1760f4d079f362ecdc
   .heroBanner {
     padding: 2rem;
   }
@@ -21,6 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -126,4 +133,6 @@
 .ctaSection .button--outline:hover {
   background: white;
   color: var(--ifm-color-primary);
+=======
+>>>>>>> 71c525b4c2247256a3563b1760f4d079f362ecdc
 }

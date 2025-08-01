@@ -4,32 +4,32 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: '🤖 Multi-Agent Collaboration',
     Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Advanced swarm intelligence enabling multiple AI agents to work together seamlessly 
+        with coordinated decision-making and shared knowledge.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: '🔒 Ethical AI Framework',
     Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Zeroth-gate validation system ensuring all AI operations align with ethical principles 
+        before execution, providing safety and accountability.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: '📊 Decentralized Governance',
     Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        IPFS-based Soulchain ledger providing transparent audit trails and decentralized 
+        governance for AI operations and decision-making.
       </>
     ),
   },
