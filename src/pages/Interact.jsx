@@ -107,17 +107,45 @@ function InteractPage() {
 
             {response && (
               <div className={styles.response}>
-                <h3>Response</h3>
+                <h3>AI Response</h3>
                 <div className={styles.responseContent}>
+                  {/* Main AI Response Content */}
                   <div className={styles.responseItem}>
-                    <strong>Status:</strong> {response.status}
+                    <strong>Response:</strong>
+                    <div className={styles.aiContent}>
+                      {response.data?.content || 'No content received'}
+                    </div>
                   </div>
+
+                  {/* Processing Information */}
                   <div className={styles.responseItem}>
-                    <strong>Confidence:</strong> {response.data?.confidence || 'N/A'}
+                    <strong>Confidence:</strong> {response.data?.confidence ? `${(response.data.confidence * 100).toFixed(1)}%` : 'N/A'}
                   </div>
+
                   <div className={styles.responseItem}>
-                    <strong>Type:</strong> {response.data?.consensus?.type || 'N/A'}
+                    <strong>Consensus Type:</strong> {response.data?.consensus?.type || 'N/A'}
                   </div>
+
+                  <div className={styles.responseItem}>
+                    <strong>Processing Time:</strong> {response.data?.processing?.duration ? `${response.data.processing.duration}ms` : 'N/A'}
+                  </div>
+
+                  <div className={styles.responseItem}>
+                    <strong>Model:</strong> {response.data?.processing?.model || 'N/A'}
+                  </div>
+
+                  <div className={styles.responseItem}>
+                    <strong>Agents Involved:</strong>
+                    <div className={styles.agentsList}>
+                      {response.data?.consensus?.agents ? 
+                        response.data.consensus.agents.map((agent, index) => (
+                          <span key={index} className={styles.agentTag}>{agent}</span>
+                        )) : 
+                        'N/A'
+                      }
+                    </div>
+                  </div>
+
                   <div className={styles.responseItem}>
                     <strong>Timestamp:</strong> {response.timestamp}
                   </div>

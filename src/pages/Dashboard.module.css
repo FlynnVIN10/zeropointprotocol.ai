@@ -295,6 +295,13 @@
   margin: 0;
 }
 
+.loadingIndicator {
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: italic;
+}
+
 /* Responsive design */
 @media (max-width: 1024px) {
   .dashboardGrid {

@@ -13,15 +13,16 @@ function DashboardPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [lastUpdate, setLastUpdate] = useState(null);
+  const [statusLoading, setStatusLoading] = useState(false);
+  const [agentLoading, setAgentLoading] = useState(false);
 
-  const fetchData = useCallback(async (showLoading = false) => {
+  // Separate fetch functions for granular updates
+  const fetchStatusData = useCallback(async (showLoading = false) => {
     try {
       if (showLoading) {
-        setLoading(true);
+        setStatusLoading(true);
       }
-      setError(null);
       
-      // Fetch status data
       const statusResponse = await fetch(API_ENDPOINTS.UI_STATUS, {
         headers: {
           'Cache-Control': 'no-cache',
@@ -53,7 +54,21 @@ function DashboardPage() {
         }
       }
 
-      // Fetch agent data
+      setLastUpdate(new Date().toISOString());
+    } catch (err) {
+      console.error('Status fetch error:', err);
+      setError('Status data temporarily unavailable.');
+    } finally {
+      setStatusLoading(false);
+    }
+  }, []);
+
+  const fetchAgentData = useCallback(async (showLoading = false) => {
+    try {
+      if (showLoading) {
+        setAgentLoading(true);
+      }
+      
       const agentResponse = await fetch(API_ENDPOINTS.UI_AGENTS, {
         headers: {
           'Cache-Control': 'no-cache',
@@ -92,70 +107,50 @@ function DashboardPage() {
       }
 
       setLastUpdate(new Date().toISOString());
-
     } catch (err) {
-      console.error('Dashboard fetch error:', err);
-      setError('Dashboard data temporarily unavailable. Some features may be limited.');
-      
-      // Set fallback data
-      setStatusData({
-        health: { 
-          status: 'operational', 
-          services: { 
-            database: 'connected', 
-            ipfs: 'ready',
-            consensus: 'active'
-          },
-          metrics: {
-            uptime: 3600,
-            responseTime: '45ms',
-            errorRate: '0.1%'
-          }
-        },
-        uptime: 3600,
-        lastUpdate: new Date().toISOString(),
-        version: '0.0.1',
-        environment: 'development',
-      });
-      setAgentData({
-        totalAgents: 16,
-        activeAgents: 12,
-        agentTypes: {
-          'consensus': 4,
-          'ethical': 3,
-          'monitoring': 3,
-          'security': 2
-        },
-        agentStatusDistribution: {
-          'active': 12,
-          'idle': 3,
-          'maintenance': 1
-        },
-        recentActivities: [
-          { type: 'consensus', timestamp: new Date().toISOString(), status: 'completed' },
-          { type: 'ethical_check', timestamp: new Date().toISOString(), status: 'completed' }
-        ]
-      });
+      console.error('Agent fetch error:', err);
+      setError('Agent data temporarily unavailable.');
     } finally {
-      setLoading(false);
+      setAgentLoading(false);
     }
   }, []);
 
+  // Initial data fetch
   useEffect(() => {
-    // Initial data fetch
-    fetchData(true);
-    
-    // Refresh data every 30 seconds without showing loading state
+    const initialFetch = async () => {
+      setLoading(true);
+      setError(null);
+      
+      try {
+        await Promise.all([
+          fetchStatusData(false),
+          fetchAgentData(false)
+        ]);
+      } catch (err) {
+        console.error('Initial fetch error:', err);
+        setError('Dashboard data temporarily unavailable. Some features may be limited.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    initialFetch();
+  }, [fetchStatusData, fetchAgentData]);
+
+  // Manual refresh handler
+  const handleRefresh = useCallback(() => {
+    fetchStatusData(true);
+    fetchAgentData(true);
+  }, [fetchStatusData, fetchAgentData]);
+
+  // Auto-refresh only status data (less intrusive)
+  useEffect(() => {
     const interval = setInterval(() => {
-      fetchData(false);
-    }, 30000);
+      fetchStatusData(false); // Silent update
+    }, 60000); // Every minute instead of 30 seconds
     
     return () => clearInterval(interval);
-  }, [fetchData]);
-
-  const handleRefresh = () => {
-    fetchData(true);
-  };
+  }, [fetchStatusData]);
 
   const renderStatusCard = (title, data, type = 'info') => (
     <div className={clsx(styles.card, styles[type])}>
@@ -199,22 +194,26 @@ function DashboardPage() {
       {
         title: 'System Status',
         value: statusData.health?.status || 'unknown',
-        type: statusData.health?.status === 'operational' ? 'success' : 'warning'
+        type: statusData.health?.status === 'operational' ? 'success' : 'warning',
+        loading: statusLoading
       },
       {
         title: 'Uptime',
         value: `${Math.floor((statusData.uptime || 0) / 3600)}h ${Math.floor(((statusData.uptime || 0) % 3600) / 60)}m`,
-        type: 'info'
+        type: 'info',
+        loading: statusLoading
       },
       {
         title: 'Active Agents',
         value: `${agentData.activeAgents || 0}/${agentData.totalAgents || 0}`,
-        type: 'info'
+        type: 'info',
+        loading: agentLoading
       },
       {
         title: 'Response Time',
         value: statusData.health?.metrics?.responseTime || 'N/A',
-        type: 'info'
+        type: 'info',
+        loading: statusLoading
       }
     ];
 
@@ -223,7 +222,13 @@ function DashboardPage() {
         {metrics.map((metric, index) => (
           <div key={index} className={clsx(styles.metricCard, styles[metric.type])}>
             <h4 className={styles.metricTitle}>{metric.title}</h4>
-            <div className={styles.metricValue}>{metric.value}</div>
+            <div className={styles.metricValue}>
+              {metric.loading ? (
+                <span className={styles.loadingIndicator}>Updating...</span>
+              ) : (
+                metric.value
+              )}
+            </div>
           </div>
         ))}
       </div>
@@ -242,10 +247,10 @@ function DashboardPage() {
             <div className={styles.headerControls}>
               <button 
                 onClick={handleRefresh}
-                disabled={loading}
+                disabled={statusLoading || agentLoading}
                 className={styles.refreshButton}
               >
-                {loading ? 'Refreshing...' : 'Refresh'}
+                {statusLoading || agentLoading ? 'Refreshing...' : 'Refresh'}
               </button>
               {lastUpdate && (
                 <span className={styles.lastUpdate}>
