@@ -17,8 +17,7 @@ export function ChatWidget() {
     const savedMessages = localStorage.getItem('chatHistory');
     if (savedMessages) {
       try {
-        const parsed = JSON.parse(savedMessages);
-        setMessages(parsed.slice(-50)); // Keep last 50 messages
+        setMessages(JSON.parse(savedMessages));
       } catch (error) {
         console.error('Error loading chat history:', error);
       }
@@ -27,50 +26,78 @@ export function ChatWidget() {
 
   // Save messages to localStorage whenever messages change
   useEffect(() => {
-    localStorage.setItem('chatHistory', JSON.stringify(messages));
+    if (messages.length > 0) {
+      localStorage.setItem('chatHistory', JSON.stringify(messages));
+    }
   }, [messages]);
 
-  // Scroll to bottom when new messages arrive
+  // Auto-scroll to bottom when new messages arrive
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // SSE connection for real-time messages
   useEffect(() => {
     const connectSSE = () => {
       try {
-        eventSourceRef.current = new EventSource(API_ENDPOINTS.CHAT_STREAM);
-        
-        eventSourceRef.current.onopen = () => {
+        const eventSource = new EventSource(API_ENDPOINTS.CHAT_STREAM);
+
+        eventSource.onopen = () => {
           setIsConnected(true);
           setConnectionStatus('Connected');
+          console.log('SSE connection opened.');
         };
 
-        eventSourceRef.current.onmessage = (event) => {
-          const data = JSON.parse(event.data);
-          
-          if (data.type === 'message') {
-            setMessages(prev => [...prev, {
-              id: Date.now(),
-              author: 'synthiant',
-              content: data.content,
-              timestamp: new Date().toISOString()
-            }]);
-            setIsTyping(false);
-          } else if (data.type === 'typing') {
-            setIsTyping(true);
+        eventSource.onmessage = (event) => {
+          try {
+            const data = JSON.parse(event.data);
+            console.log('Received SSE data:', data);
+
+            if (data.type === 'message') {
+              // Add AI message to chat
+              const aiMessage = {
+                id: data.id || Date.now(),
+                author: data.author || 'ai',
+                content: data.content,
+                timestamp: data.timestamp || new Date().toISOString()
+              };
+              
+              setMessages(prevMessages => {
+                const updatedMessages = [...prevMessages, aiMessage];
+                return updatedMessages;
+              });
+              
+              setIsTyping(false);
+            } else if (data.type === 'connected') {
+              console.log('Connected to chat stream:', data.message);
+            } else if (data.type === 'ping') {
+              // Keep connection alive
+              console.log('Ping received');
+            }
+          } catch (error) {
+            console.error('Error parsing SSE data:', error);
           }
         };
 
-        eventSourceRef.current.onerror = () => {
+        eventSource.onerror = (error) => {
+          console.error('SSE error:', error);
+          setConnectionStatus('Disconnected');
           setIsConnected(false);
-          setConnectionStatus('Connection lost. Reconnecting...');
-          eventSourceRef.current?.close();
+          eventSource.close();
           
-          // Attempt to reconnect after 5 seconds
-          setTimeout(connectSSE, 5000);
+          // Try to reconnect after 5 seconds
+          setTimeout(() => {
+            if (!isConnected) {
+              connectSSE();
+            }
+          }, 5000);
         };
 
+        eventSourceRef.current = eventSource;
+
+        return () => {
+          eventSource.close();
+          console.log('SSE connection closed.');
+        };
       } catch (error) {
         console.error('SSE connection error:', error);
         setConnectionStatus('Connection failed');
@@ -92,10 +119,11 @@ export function ChatWidget() {
     const userMessage = {
       id: Date.now(),
       author: 'user',
-      content: inputValue,
+      content: inputValue.trim(),
       timestamp: new Date().toISOString()
     };
 
+    // Add user message immediately
     setMessages(prev => [...prev, userMessage]);
     setInputValue('');
     setIsTyping(true);
@@ -107,15 +135,30 @@ export function ChatWidget() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ message: inputValue }),
+        body: JSON.stringify({ message: userMessage.content }),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to send message');
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
+
+      const result = await response.json();
+      console.log('Message sent successfully:', result);
+      
+      // The AI response will come through the SSE stream
+      // We don't need to handle it here as it's handled in the onmessage event
+      
     } catch (error) {
       console.error('Error sending message:', error);
       setIsTyping(false);
+      
+      // Add error message
+      setMessages(prev => [...prev, {
+        id: Date.now(),
+        author: 'ai',
+        content: 'Sorry, I encountered an error processing your message. Please try again.',
+        timestamp: new Date().toISOString()
+      }]);
     }
   };
 
